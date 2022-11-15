@@ -26,13 +26,9 @@
 	},
 	"require-dev": {},
 	"extra": {
-		"wordpress-install-dir": "wp",
+		"wordpress-install-dir": "public/wp",
 		"installer-paths": {
-      "wp/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "wp/app/themes/{$name}/": ["type:wordpress-theme"]
+      "public/content/app/plugins/{$name}/": ["type:wordpress-plugin"]
     }
-	},
-	"scripts": {
-		"post-install-cmd": "mv ideals wp/wp-content/themes/"
 	}
 }

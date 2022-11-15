@@ -1,14 +1,6 @@
 # WordPress
-/wp/*
-!wp/wp-content/
-
-wp/wp-content/*
-!wp/wp-content/themes/
-
-wp/wp-content/themes/*
-!wp/wp-content/themes/ideals/
-
-wp/.htaccess
+/public/wp/
+/public/content/plugins
 
 # Logs
 *.log
@@ -20,3 +12,4 @@ wp/.htaccess
 
 # Composer
 /vendor
+composer.lock
