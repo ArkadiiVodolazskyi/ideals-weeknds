@@ -1,0 +1,38 @@
+{
+	"name": "arkadiivodolazskyi/ideals-weeknds",
+	"description": "Test task for iDeals",
+	"authors": [
+		{
+			"name": "Arkadii Vodolazskyi",
+			"homepage": "https://github.com/ArkadiiVodolazskyi/"
+		}
+	],
+	"type": "project",
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
+	"config": {
+		"vendor-dir": "vendor",
+		"allow-plugins": {
+			"johnpbloch/wordpress-core-installer": true
+		}
+	},
+	"require": {
+		"php": ">=7.4",
+		"johnpbloch/wordpress": ">=6.1"
+	},
+	"require-dev": {},
+	"extra": {
+		"wordpress-install-dir": "wp",
+		"installer-paths": {
+      "wp/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "wp/app/themes/{$name}/": ["type:wordpress-theme"]
+    }
+	},
+	"scripts": {
+		"post-install-cmd": "mv ideals wp/wp-content/themes/"
+	}
+}

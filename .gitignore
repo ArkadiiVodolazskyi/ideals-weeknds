@@ -1,0 +1,22 @@
+# WordPress
+/wp/*
+!wp/wp-content/
+
+wp/wp-content/*
+!wp/wp-content/themes/
+
+wp/wp-content/themes/*
+!wp/wp-content/themes/ideals/
+
+wp/.htaccess
+
+# Logs
+*.log
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor
