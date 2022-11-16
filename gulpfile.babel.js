@@ -19,9 +19,9 @@ import fileinclude from 'gulp-file-include';
 const theme_assets = 'public/content/themes/ideals/assets';
 const routes = {
 	html: {
-		watch: 'src/*.html',
-		src: 'src/*.html',
-		dest: `${theme_assets}/`
+		watch: 'src/html/**/*.html',
+		src: 'src/html/**/*.html',
+		dest: `${theme_assets}/html/`
 	},
 	img: {
 		src: 'src/img/*',
@@ -117,7 +117,7 @@ const server_settings = {
 }
 
 const server_run = () => {
-	gulp.src(`${theme_assets}`)
+	gulp.src(`${theme_assets}/html`)
 	.pipe(server(server_settings));
 }
 
