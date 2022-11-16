@@ -3,7 +3,6 @@ import gulp from 'gulp';
 // ----- Plugins -----
 
 import {deleteSync as del} from 'del';
-import server from 'gulp-webserver';
 import image from 'gulp-image';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
@@ -13,6 +12,8 @@ import csso from 'gulp-csso';
 import browserify from 'gulp-bro';
 import babelify from 'babelify';
 import fileinclude from 'gulp-file-include';
+import browserSync from 'browser-sync';
+const server = browserSync.create();
 
 // ----- Routes -----
 
@@ -67,7 +68,8 @@ const html_combine = () => {
 		prefix: '@@',
 		basepath: '@file'
 	}))
-	.pipe(gulp.dest(routes.html.dest));
+	.pipe(gulp.dest(routes.html.dest))
+	.pipe(server.stream());
 }
 
 const sass_compile = () => {
@@ -76,7 +78,8 @@ const sass_compile = () => {
 	.on('error', sass.logError)
 	.pipe(autoPrefixer())
 	.pipe(csso())
-	.pipe(gulp.dest(routes.sass.dest));
+	.pipe(gulp.dest(routes.sass.dest))
+	.pipe(server.stream());
 }
 
 const js_compile = () => {
@@ -84,12 +87,14 @@ const js_compile = () => {
 	.pipe(browserify({
 		transform: [babelify.configure({ presets: ['@babel/preset-env'] })]
 	}))
-	.pipe(gulp.dest(routes.js.dest));
+	.pipe(gulp.dest(routes.js.dest))
+	.pipe(server.stream());
 }
 
 const process_libs = () => {
 	return gulp.src(routes.libs.src)
-	.pipe(gulp.dest(routes.libs.dest));
+	.pipe(gulp.dest(routes.libs.dest))
+	.pipe(server.stream());
 }
 
 const assets = gulp.series([html_combine, process_libs, sass_compile, js_compile]);
@@ -111,19 +116,14 @@ const watch = async () => {
 
 // ----- Server -----
 
-const server_settings = {
-	host: 'localhost',
-	port: 1111,
-	livereload: {
-		enable: true
-	},
-	open: `https://localhost:1111/`,
-	https: true
-}
-
-const server_run = () => {
-	gulp.src(routes.html.dest)
-	.pipe(server(server_settings));
+function server_run() {
+	server.init({
+		server: {
+			baseDir: routes.html.dest
+		},
+		port: 1111,
+		open: true
+	});
 }
 
 const start = gulp.parallel([
