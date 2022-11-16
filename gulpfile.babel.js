@@ -25,12 +25,12 @@ const routes = {
 		dest: `${theme_assets}/`
 	},
 	img: {
-		src: 'src/img/*',
+		src: 'src/img/**/*',
 		dest: `${theme_assets}/img/`
 	},
 	sass: {
-		watch: 'src/sass/*.sass',
-		src: 'src/sass/**/*.sass',
+		watch: 'src/sass/**/*.sass',
+		src: 'src/sass/*.sass',
 		dest: `${theme_assets}/css/`
 	},
 	js: {
@@ -54,7 +54,9 @@ const clear = resolve => {
 
 const img = async () => {
 	gulp.src(routes.img.src)
-	.pipe(image())
+	.pipe(image({
+		svgo: false
+	}))
 	.pipe(gulp.dest(routes.img.dest));
 }
 
