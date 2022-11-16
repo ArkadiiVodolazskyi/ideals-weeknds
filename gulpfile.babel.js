@@ -19,9 +19,9 @@ import fileinclude from 'gulp-file-include';
 const theme_assets = 'public/content/themes/ideals/assets';
 const routes = {
 	html: {
-		watch: 'src/html/**/*.html',
-		src: 'src/html/**/*.html',
-		dest: `${theme_assets}/html/`
+		watch: 'src/*.html',
+		src: 'src/*.html',
+		dest: `${theme_assets}/`
 	},
 	img: {
 		src: 'src/img/*',
@@ -112,12 +112,17 @@ const watch = async () => {
 // ----- Server -----
 
 const server_settings = {
-	livereload: true,
-	open: true
+	host: 'localhost',
+	port: 1111,
+	livereload: {
+		enable: true
+	},
+	open: `https://localhost:1111/`,
+	https: true
 }
 
 const server_run = () => {
-	gulp.src(`${theme_assets}/html`)
+	gulp.src(routes.html.dest)
 	.pipe(server(server_settings));
 }
 
