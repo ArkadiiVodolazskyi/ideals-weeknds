@@ -1,5 +1,48 @@
 html
-	font-family: $ff-main
+	font: $fs-main $ff-main
+	color: $col-base-light-1
+	line-height: 1.5
+	scroll-behavior: smooth
+	scroll-padding-top: 4em
 
 body
 	background-color: $col-base-dark-1
+
+section
+	padding-top: em(60px)
+	position: relative
+	isolation: isolate
+
+ul, ol,
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	padding: 0
+
+li
+	display: inline-block
+
+a
+	text-decoration: none
+	color: inherit
+	display: inline-block
+	transition: color $tr-1, border-color $tr-2
+
+button
+	display: inline-flex
+	align-items: center
+	background: none
+	border: none
+	padding: 0
+	color: inherit
+	transition: background-color $tr-1, outline $tr-1
+
+img
+	width: 100%
+	height: auto
+
+svg
+	fill: currentColor
+	stroke: currentColor
+	transition: fill $tr-1, stroke $tr-1
+	path
+		transition: fill $tr-1, stroke $tr-1

@@ -1,17 +1,178 @@
-btn
-dropdown
-search
+.wrapper
+	width: $wrapper-section-xl
+	margin: 0 auto
+:is(header, footer) .wrapper
+	width: $wrapper-nav-xl
 
-section-title
-section-subtitle
+.nav-menu
+	display: flex
+	align-items: center
+	gap: em(14px)
+	font-weight: bold
+	a
+		padding: em(14px) em(46px)
+		border: 1px solid $tsp
+		&:hover
+			border-color: $col-base-dark-1
 
-cards
-cards[data-cards=news-default]
-cards[data-cards=news-main]
-cards[data-cards=news-aside]
-cards[data-cards=merch]
-cards[data-cards=clients]
-merch-cards
+.dropdown
+	position: relative
+	> a
+		display: inline-flex
+		align-items: center
+		&::after
+			@include arrow()
+			content: ''
+			font-size: 0.45em
+			color: $col-base-light-1
+			margin-left: 2em
+	&:hover > ul
+		opacity: 1
+		visibility: visible
+	> ul
+		position: absolute
+		width: 100%
+		top: 100%
+		left: 0
+		transition: opacity $tr-1
+		opacity: 0
+		visibility: hidden
+
+.search
+	position: relative
+	&[data-active] .search-field
+		opacity: 1
+		visibility: visible
+		padding: 0.8em 1.2em
+	.search-field
+		position: absolute
+		z-index: 10
+		right: 100%
+		top: 50%
+		transform: translate(0, -50%)
+		width: em(341px)
+		background-color: $col-base-dark-1
+		padding: 0.8em 0
+		border-color: $tsp
+		border-radius: em(50px)
+		color: inherit
+		opacity: 0
+		visibility: hidden
+		transition: all $tr-1
+		&::placeholder
+			opacity: 1
+	.search-button
+		flex-shrink: 0
+		margin-left: 1em
+		&:hover
+			color: $col-base-dark-1
+
+.thumbnail-wrapper
+	text-align: center
+
+.button
+	gap: em(22px)
+	border-radius: 8px
+	padding: em(19px) em(48px)
+	font-size: em(24px)
+	background-color: $col-base-light-1
+	outline: 5px solid $tsp
+	color: $col-base-dark-1
+	&:hover
+		outline-color: rgba($col-base-light-1, 0.4)
+	&:focus-within
+		outline-color: rgba($col-base-light-1, 0.4)
+		background-color: #F3F3F3
+
+.section-title
+	color: $col-accent
+	font-size: em(44px)
+
+.section-subtitle
+	font-weight: 400
+	color: $col-base-light-2
+	max-width: 2em(40px)
+	margin-top: em(30px)
+
+.slider-controls
+	display: flex
+	align-items: center
+	justify-content: space-between
+	.slider-dots
+		display: inline-flex
+		align-items: center
+		gap: .7em
+		li
+			width: 1em
+			height: 1em
+			border-radius: 50%
+			transition: border $tr-1, background-color $tr-1
+			border: 1px solid $col-base-light-1
+			&:hover, &.tns-nav-active
+				border-color: $tsp
+				background-color: $col-accent
+	.slider-buttons
+		display: inline-flex
+		align-items: center
+		gap: em(48px)
+		button
+			color: $col-accent
+			font-size: 1.3em
+			transition: color $tr-1
+			&:disabled
+				color: #2E0A05
+				pointer-events: none
+			&:hover
+				color: darken($col-accent, 20%)
+			&[data-controls=prev]
+				@include arrow(left)
+			&[data-controls=next]
+				@include arrow(right)
+
+.cards
+	&:not(&[data-cards=merch])
+		display: grid
+	&[data-cards=news-default]
+		grid-auto-columns: fit-content(em(330px))
+		grid-template-columns: repeat(3, 1fr)
+		gap: em(90px)
+		.card
+			.thumbnail-wrapper
+				aspect-ratio: 1
+				padding: em(14px)
+				background-color: $col-base-dark-3
+			.thumbnail
+				object-fit: cover
+			.info
+				padding-top: em(30px)
+			.title
+				@include wline($col-accent)
+				font-size: em(24px)
+			.excerpt
+				margin-top: em(30px)
+				color: $col-base-light-2
+	&[data-cards=merch] .card
+		padding: em(70px) 0 em(47px) em(29px)
+		background-color: $col-base-dark-1
+		display: inline-flex
+		align-items: center
+		justify-content: space-between
+		gap: em(30px)
+		text-transform: uppercase
+		> *
+			width: 50%
+		.title
+			font-size: em(24px)
+		.description
+			margin-top: em(65px)
+			color: $col-base-light-2
+	&[data-cards=clients]
+		grid-template-columns: repeat(3, em(210px))
+		justify-content: space-between
+		row-gap: em(100px)
+	cards[data-cards=news-main]
+	cards[data-cards=news-aside]
+	merch-cards
 
 breadcrumbs
 pagination

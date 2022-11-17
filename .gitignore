@@ -17,3 +17,7 @@ composer.lock
 # Node
 node_modules
 package-lock.json
+/content/themes/ideals/assets
+
+# Temp info
+Todo.md

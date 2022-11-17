@@ -20,12 +20,13 @@ const server = browserSync.create();
 const theme_assets = 'public/content/themes/ideals/assets';
 const routes = {
 	html: {
-		watch: 'src/*.html',
-		src: 'src/*.html',
-		dest: `${theme_assets}/`
+		watch: 'src/html/**/*.html',
+		src: 'src/html/**/*.html',
+		dest: `${theme_assets}/html/`
 	},
 	img: {
 		src: 'src/img/**/*',
+		watch: 'src/img/**/*.svg',
 		dest: `${theme_assets}/img/`
 	},
 	sass: {
@@ -64,6 +65,16 @@ const prepare = gulp.series([clear, img]);
 
 // ----- Compile -----
 
+const svg_watch = () => {
+	return gulp.src(routes.img.watch)
+	.pipe(image({
+		svgo: false,
+		quiet: true
+	}))
+	.pipe(gulp.dest(routes.img.dest))
+	.pipe(server.stream());
+}
+
 const html_combine = () => {
 	return gulp.src(routes.html.src)
 	.pipe(fileinclude({
@@ -99,7 +110,7 @@ const process_libs = () => {
 	.pipe(server.stream());
 }
 
-const assets = gulp.series([html_combine, process_libs, sass_compile, js_compile]);
+const assets = gulp.series([svg_watch, html_combine, process_libs, sass_compile, js_compile]);
 
 // ----- Watch -----
 
@@ -110,6 +121,7 @@ const watch_options = {
 }
 
 const watch = async () => {
+	gulp.watch([routes.img.watch], watch_options, svg_watch);
 	gulp.watch([routes.html.watch], watch_options, html_combine);
 	gulp.watch([routes.libs.watch], watch_options, process_libs);
 	gulp.watch([routes.sass.watch], watch_options, sass_compile);
@@ -120,9 +132,7 @@ const watch = async () => {
 
 function server_run() {
 	server.init({
-		server: {
-			baseDir: routes.html.dest
-		},
+		server: [theme_assets, `${theme_assets}/html/`],
 		port: 1111,
 		open: true
 	});
