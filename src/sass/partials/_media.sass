@@ -1,0 +1,92 @@
+@media (max-width: 1440px)
+	section
+		padding-top: 2em
+	.section-title
+		font-size: 2.1em
+	.breadcrumbs
+		padding: 7px 0
+
+	.cards[data-cards="merch"] .card
+		padding: 1em 0 1em 1.5em
+		.description
+			margin-top: 2em
+		.thumbnail-wrapper
+			font-size: 0.8em
+	.cards[data-cards="clients"]
+		row-gap: 2em
+	.cards[data-cards="news-main"] .card .title
+		font-size: 2em
+
+	section.intro
+		font-size: 14px
+		.content
+			max-width: 650px
+	section.hot-news
+		padding-bottom: 4em
+		.cards
+			margin-top: 2em
+	section.merch .slider-wrapper
+		max-width: 850px
+	section.clients
+		padding-bottom: 4em
+		.cards
+			margin-top: 3em
+	section.about-us
+		padding-bottom: 4em
+		.info
+			font-size: 1.3em
+
+	section.news main
+		font-size: 0.8em
+	section.news-aside
+		font-size: 14px
+
+	.footer-main .wrapper
+		padding: 2em 0
+
+@media (max-width: 1280px)
+	.header-main
+		font-size: 0.9em
+
+	section.intro .content
+		font-size: 0.9em
+	section.about-us .info
+		font-size: 1.1em
+
+@media (max-width: 1024px)
+	.header-main
+		.wrapper
+			max-width: unset
+			padding-inline: 5%
+		.hamburger
+			display: inline-block
+		nav
+			position: absolute
+			left: 0
+			right: 0
+			top: 100%
+			width: 100%
+			padding: 0 5%
+			background-color: var(--col-scroll)
+			transition: opacity $tr-1
+			// opacity: 0
+			// visibility: hidden
+		.nav-menu
+			flex-direction: column
+			align-items: stretch
+
+	.cards[data-cards="news-default"]
+		gap: 3em
+		.card
+			.info
+				padding-top: 1em
+			.excerpt
+				margin-top: 1em
+
+	section.intro
+		.content
+			font-size: 0.8em
+		h1
+			font-size: 3.5em
+	section.hot-news .cards
+		font-size: 0.9em

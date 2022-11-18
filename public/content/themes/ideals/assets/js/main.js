@@ -29,5 +29,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   })();
 }, true);
+window.addEventListener('load', function () {
+  var headerMain = document.querySelector('[data-watch=scroll]');
+  (function () {
+    window.addEventListener('scroll', function () {
+      var scroll = window.scrollY;
+      if (scroll > 0) {
+        headerMain.toggleAttribute('data-scroll', true);
+      } else {
+        headerMain.toggleAttribute('data-scroll', false);
+      }
+    });
+  })();
+}, true);
 
 },{}]},{},[1]);

@@ -25,3 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	})();
 
 }, true);
+
+window.addEventListener('load', () => {
+
+	const headerMain = document.querySelector('[data-watch=scroll]');
+
+	(() => {
+		window.addEventListener('scroll', () => {
+			const scroll = window.scrollY;
+			if (scroll > 0) {
+				headerMain.toggleAttribute('data-scroll', true);
+			} else {
+				headerMain.toggleAttribute('data-scroll', false);
+			}
+		});
+	})();
+
+}, true);

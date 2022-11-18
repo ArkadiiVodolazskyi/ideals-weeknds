@@ -82,6 +82,7 @@
 
 .thumbnail-wrapper
 	text-align: center
+	overflow: hidden
 
 .button
 	gap: em(22px)
@@ -184,6 +185,13 @@
 		.description
 			margin-top: em(65px)
 			color: $col-base-light-2
+		.thumbnail-wrapper
+			max-width: em(435px)
+			max-height: em(450px)
+		.thumbnail
+			width: auto
+			max-width: 100%
+			max-height: 100%
 	&[data-cards=clients]
 		grid-template-columns: repeat(3, em(210px))
 		justify-content: space-between
@@ -206,6 +214,7 @@
 			color: $col-base-light-2
 		.read-more
 			color: $col-accent
+			font-size: max(1em, 16px)
 			&:hover
 				color: darken($col-accent, 10%)
 	&[data-cards=news-aside]
@@ -234,7 +243,7 @@
 	display: flex
 	flex-wrap: wrap
 	align-items: center
-	font-size: em(16px)
+	font-size: 16px
 	padding: em(15px) 0
 	li
 		&:not(:first-of-type)::before
@@ -267,3 +276,15 @@
 			pointer-events: none
 		&:hover
 			color: $col-accent
+
+.hamburger
+	line-height: 1
+	&:hover
+		color: $col-base-dark-3
+	&::after
+		content: '\292B'
+		font-size: 36px
+		transition: color $tr-1
+	// &
+	// 	content: '⤫'
+
