@@ -12,7 +12,7 @@
 	@@include('./parts/header.html')
 
 	<section class="intro">
-		<svg><use href="./img/icons.svg#leaf"></use></svg>
+		<svg class="bg-leaf"><use href="./img/icons.svg#leaf"></use></svg>
 		<div class="wrapper">
 			<h2>News</h2>
 		</div>
@@ -41,13 +41,13 @@
 					])
 				</div>
 				<div class="pagination">
-					<a href="" class="prev"></a>
+					<a class="shift prev" href="" aria-disabled="true"></a>
 					<ul class="pages">
-						<li><a href="">1</a></li>
-						<li><a href="">2</a></li>
-						<li><a href="">3</a></li>
+						<li><a class="page" href="" data-current="">1</a></li>
+						<li><a class="page" href="">2</a></li>
+						<li><a class="page" href="">3</a></li>
 					</ul>
-					<a href="" class="next"></a>
+					<a class="shift next" href=""></a>
 				</div>
 			</main>
 

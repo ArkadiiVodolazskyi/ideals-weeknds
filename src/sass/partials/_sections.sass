@@ -1,6 +1,7 @@
 section.intro
-	padding: em(304px) 0 em(227px)
+	padding: em(263px) 0 em(207px)
 	background-color: $col-accent
+	overflow: hidden
 	.bg-leaf
 		color: $col-base-dark-2
 		opacity: 0.05
@@ -8,12 +9,16 @@ section.intro
 		z-index: -1
 		top: 0
 		right: 0
+		height: 125%
+		aspect-ratio: 1
 	.content
 		max-width: 930px
 	h1
 		font-size: em(96px)
+	h2
+		font-size: em(60px)
 	p
-		margin-top: em(48px)
+		margin-top: em(36px)
 		font-size: em(32px)
 	.button
 		margin-top: em(52px)
@@ -67,3 +72,44 @@ section.about-us
 	.info
 		font-size: em(32px)
 		color: $col-base-light-2
+
+section.news
+	background-color: $col-base-dark-2
+	padding: em(50px) 0 em(80px)
+	.wrapper
+		display: flex
+		justify-content: center
+		gap: em(30px)
+	main
+		flex: 1 1 57%
+		max-width: max(57%, em(810px))
+		.cards
+			margin-top: em(40px)
+		.pagination
+			margin-top: em(32px)
+	aside
+		flex: 1 1 40%
+
+section.news-aside
+	padding-top: 0
+	&:not(:first-child)
+		margin-top: em(80px)
+	.section-title
+		@include wline($col-accent, 59%)
+		color: inherit
+		width: max-content
+		max-width: 100%
+		font-size: em(36px)
+		&::after
+			transform: translate(50%, 0)
+	.cards
+		margin-top: em(16px)
+
+
+
+
+
+
+
+
+

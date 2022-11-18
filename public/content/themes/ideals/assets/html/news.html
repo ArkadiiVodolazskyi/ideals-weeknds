@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<header>
+	<header class="header-main">
 	<div class="wrapper">
 		<a class="logo" href="#">
 			<svg width="64" height="37"><use href="../../img/icons.svg#logo"></use></svg>
@@ -40,7 +40,7 @@
 </header>
 
 	<section class="intro">
-		<svg><use href="./img/icons.svg#leaf"></use></svg>
+		<svg class="bg-leaf"><use href="./img/icons.svg#leaf"></use></svg>
 		<div class="wrapper">
 			<h2>News</h2>
 		</div>
@@ -56,25 +56,33 @@
 				</ul>
 				<div class="cards" data-cards="news-main">
 					<article class="card">
-	<img class="thumbnail" src="./img/news/main-1.png">
-	<h4 class="title">Post Title Here</h4>
-	<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, quis bibendum arcu sagittis. Nisl praesent leo porttitor tortor auctor gravida dignissim. Magna feugiat augue maecenas sagittis, sagittis. Elementum dictumst sed ut sed accumsan. Urna integer egestas id eget ac..</p>
-	<a href="">Read More</a>
+	<div class="thumbnail-wrapper">
+		<img class="thumbnail" src="./img/news/main-1.png">
+	</div>
+	<div class="content">
+		<h4 class="title">Post Title Here</h4>
+		<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, quis bibendum arcu sagittis. Nisl praesent leo porttitor tortor auctor gravida dignissim. Magna feugiat augue maecenas sagittis, sagittis. Elementum dictumst sed ut sed accumsan. Urna integer egestas id eget ac..</p>
+		<a class="read-more" href="">Read More</a>
+	</div>
 </article><article class="card">
-	<img class="thumbnail" src="./img/news/main-2.png">
-	<h4 class="title">Post Title Here</h4>
-	<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, quis bibendum arcu sagittis. Nisl praesent leo porttitor tortor auctor gravida dignissim. Magna feugiat augue maecenas sagittis, sagittis. Elementum dictumst sed ut sed accumsan. Urna integer egestas id eget ac..</p>
-	<a href="">Read More</a>
+	<div class="thumbnail-wrapper">
+		<img class="thumbnail" src="./img/news/main-2.png">
+	</div>
+	<div class="content">
+		<h4 class="title">Post Title Here</h4>
+		<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, quis bibendum arcu sagittis. Nisl praesent leo porttitor tortor auctor gravida dignissim. Magna feugiat augue maecenas sagittis, sagittis. Elementum dictumst sed ut sed accumsan. Urna integer egestas id eget ac..</p>
+		<a class="read-more" href="">Read More</a>
+	</div>
 </article>
 				</div>
 				<div class="pagination">
-					<a href="" class="prev"></a>
+					<a class="shift prev" href="" aria-disabled="true"></a>
 					<ul class="pages">
-						<li><a href="">1</a></li>
-						<li><a href="">2</a></li>
-						<li><a href="">3</a></li>
+						<li><a class="page" href="" data-current="">1</a></li>
+						<li><a class="page" href="">2</a></li>
+						<li><a class="page" href="">3</a></li>
 					</ul>
-					<a href="" class="next"></a>
+					<a class="shift next" href=""></a>
 				</div>
 			</main>
 
@@ -84,21 +92,33 @@
 					<div class="cards" data-cards="news-aside">
 						<a class="card" href="">
 	<article>
-		<img class="thumbnail" src="./img/news/latest-1.png">
-		<h4 class="title">Heading One</h4>
-		<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		<div class="thumbnail-wrapper">
+			<img class="thumbnail" src="./img/news/latest-1.png">
+		</div>
+		<div class="content">
+			<h4 class="title">Heading One</h4>
+			<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		</div>
 	</article>
 </a><a class="card" href="">
 	<article>
-		<img class="thumbnail" src="./img/news/latest-2.png">
-		<h4 class="title">Heading Two</h4>
-		<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		<div class="thumbnail-wrapper">
+			<img class="thumbnail" src="./img/news/latest-2.png">
+		</div>
+		<div class="content">
+			<h4 class="title">Heading Two</h4>
+			<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		</div>
 	</article>
 </a><a class="card" href="">
 	<article>
-		<img class="thumbnail" src="./img/news/latest-3.png">
-		<h4 class="title">Heading Three</h4>
-		<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		<div class="thumbnail-wrapper">
+			<img class="thumbnail" src="./img/news/latest-3.png">
+		</div>
+		<div class="content">
+			<h4 class="title">Heading Three</h4>
+			<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		</div>
 	</article>
 </a>
 					</div>
@@ -108,21 +128,33 @@
 					<div class="cards" data-cards="news-aside">
 						<a class="card" href="">
 	<article>
-		<img class="thumbnail" src="./img/news/recent-1.png">
-		<h4 class="title">Heading One</h4>
-		<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		<div class="thumbnail-wrapper">
+			<img class="thumbnail" src="./img/news/recent-1.png">
+		</div>
+		<div class="content">
+			<h4 class="title">Heading One</h4>
+			<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		</div>
 	</article>
 </a><a class="card" href="">
 	<article>
-		<img class="thumbnail" src="./img/news/recent-2.png">
-		<h4 class="title">Heading Two</h4>
-		<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		<div class="thumbnail-wrapper">
+			<img class="thumbnail" src="./img/news/recent-2.png">
+		</div>
+		<div class="content">
+			<h4 class="title">Heading Two</h4>
+			<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		</div>
 	</article>
 </a><a class="card" href="">
 	<article>
-		<img class="thumbnail" src="./img/news/recent-3.png">
-		<h4 class="title">Heading Three</h4>
-		<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		<div class="thumbnail-wrapper">
+			<img class="thumbnail" src="./img/news/recent-3.png">
+		</div>
+		<div class="content">
+			<h4 class="title">Heading Three</h4>
+			<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
+		</div>
 	</article>
 </a>
 					</div>
@@ -132,10 +164,10 @@
 		</div>
 	</section>
 
-	<footer>
+	<footer class="footer-main">
 	<div class="wrapper">
 		<a class="logo" href="#">
-			<svg><use href="../../img/icons.svg#logo"></use></svg>
+			<svg width="64" height="37"><use href="../../img/icons.svg#logo"></use></svg>
 		</a>
 		<nav>
 			<ul class="nav-menu">

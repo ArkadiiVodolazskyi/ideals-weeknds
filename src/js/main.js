@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
 	(() => {
+		const merchSliderNode = document.querySelector('[data-slider=merch]');
+		if (!merchSliderNode) { return; }
 		const merchSlider = tns({
-			container: '[data-slider=merch]',
+			container: merchSliderNode,
 			controlsPosition: 'bottom',
 			controlsText: ['', ''],
 			controlsContainer: '.slider-buttons',

@@ -3,8 +3,12 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   (function () {
+    var merchSliderNode = document.querySelector('[data-slider=merch]');
+    if (!merchSliderNode) {
+      return;
+    }
     var merchSlider = tns({
-      container: '[data-slider=merch]',
+      container: merchSliderNode,
       controlsPosition: 'bottom',
       controlsText: ['', ''],
       controlsContainer: '.slider-buttons',
