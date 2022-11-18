@@ -8,10 +8,10 @@ html
 	overscroll-behavior: contain
 	@media (min-width: 1025px)
 		scrollbar-width: auto
-		scrollbar-color: $col-accent rgba($col-accent, .25)
+		scrollbar-color: darken(saturate($col-accent, 30%), 10%) rgba($col-accent, .25)
 		&::-webkit-scrollbar
 			width: .5em
-			background-color: rgba($col-accent, .15)
+			background-color: rgba($col-accent, .25)
 		&::-webkit-scrollbar-thumb
 			box-shadow: inset 2px 2px 10px 0 rgba($col-base-dark-1, .5)
 			background: saturate($col-accent, 30%)
@@ -40,7 +40,7 @@ a
 	text-decoration: none
 	display: inline-block
 	cursor: default
-	transition: color $tr-1, border-color $tr-2, background-color $tr-1
+	transition: color $tr-1, border-color $tr-2, background-color $tr-1, transform $tr-1
 	color: inherit
 
 button
