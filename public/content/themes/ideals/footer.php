@@ -6,12 +6,7 @@
 			</svg>
 		</a>
 		<nav>
-			<ul class="nav-menu">
-				<li><a href="">News</a></li>
-				<li><a href="">Merch.</a></li>
-				<li><a href="">Clients</a></li>
-				<li><a href="">About Us</a></li>
-			</ul>
+			<?= get_nav_menu('footer'); ?>
 		</nav>
 	</div>
 </footer>

@@ -62,6 +62,9 @@ add_filter( 'script_loader_tag', 'enchance_scripts', 10, 3 );
 function theme_setup()
 {
 	add_theme_support('menus');
+	register_nav_menu( 'header', 'Header' );
+	register_nav_menu( 'footer', 'Footer' );
+
 	add_theme_support('title-tag');
 	add_theme_support('custom-logo');
 	add_theme_support('post-thumbnails');
@@ -70,7 +73,7 @@ function theme_setup()
 	add_action('wp_enqueue_scripts', 'register_styles');
 	add_action('wp_enqueue_scripts', 'register_scripts');
 }
-add_action('after_setup_theme', 'theme_setup', 9999);
+add_action('after_setup_theme', 'theme_setup');
 
 function register_widgets()
 {

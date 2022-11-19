@@ -69,22 +69,26 @@
 		.hamburger
 			display: inline-block
 		nav
+			flex-direction: column
+			align-items: stretch
 			max-height: 0
 			opacity: 0
 			visibility: hidden
 		.nav-menu
 			flex-direction: column
 			align-items: stretch
-			a, .search
+			a
 				display: flex
 				padding-inline: 5%
-			a:hover
-				background-color: $col-base-dark-1
-			.search
-				.search-button
-					order: 1
-				.search-field
-					order: 2
+				&:hover
+					background-color: $col-base-dark-1
+		.search
+			display: flex
+			padding-inline: 5%
+			.search-button
+				order: 1
+			.search-field
+				order: 2
 
 	.cards[data-cards="news-default"]
 		gap: 3em
