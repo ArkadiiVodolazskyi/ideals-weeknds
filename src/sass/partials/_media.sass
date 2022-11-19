@@ -97,7 +97,77 @@
 	section.intro
 		.content
 			font-size: 0.8em
-		h1
+		h1, h2
 			font-size: 3.5em
 	section.hot-news .cards
 		font-size: 0.9em
+
+@media (max-width: 768px)
+	.slider-controls
+		font-size: 0.8em
+
+	.cards[data-cards="news-default"]
+		grid-template-columns: repeat(2,1fr)
+	.cards[data-cards="merch"] .card
+		font-size: 0.8em
+	.cards[data-cards="clients"]
+		grid-template-columns: repeat(2,min(40%, 230px))
+	.cards[data-cards="news-main"] .card:not(:first-child)
+		margin-top: 2em
+
+	.footer-main
+		.wrapper
+			padding-block: 1em
+		.nav-menu a
+			padding-inline: 1em
+
+	section.intro
+		padding: 11em 0 5em
+		.next-section
+			bottom: 2em
+	section.about-us .wrapper
+		gap: 2em
+	section.news
+		padding: 2em 0
+		.wrapper
+			flex-direction: column
+	section.news-aside:not(:first-child)
+		margin-top: 1em
+
+@media (max-width: 480px)
+	.section-title
+		font-size: 1.8em
+	.section-subtitle
+		font-size: 0.9em
+		margin-top: 1em
+		max-width: unset
+
+	.cards[data-cards="news-default"]
+		grid-template-columns: min(100%, 300px)
+		gap: 2em
+	.cards[data-cards="merch"] .card
+		flex-direction: column
+		gap: 0.5em
+		> *
+			width: 100%
+		.thumbnail-wrapper
+			order: 1
+		.info
+			order: 2
+	.cards[data-cards="news-aside"] article
+		gap: 1em
+		flex-direction: column
+		.thumbnail-wrapper
+			max-width: min(100%, 15em)
+
+	.footer-main
+		.wrapper
+			flex-direction: column
+		nav
+			margin-top: 1em
+		.nav-menu
+			flex-direction: column
+			gap: 0
+
+	section.about-us .wrapper
+		grid-template-columns: 1fr
