@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+	// Init slider
 	(() => {
 		const merchSliderNode = document.querySelector('[data-slider=merch]');
 		if (!merchSliderNode) { return; }
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	})();
 
+	// Toggle search
 	(() => {
 		const searchBox = document.querySelector('.search');
 		searchBox?.addEventListener('click', e => {
@@ -24,12 +26,34 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	})();
 
+	// Toggle dropdown - mobile
+	(() => {
+		const navMenu = document.querySelector('.nav-menu');
+		if (!navMenu) { return; }
+		navMenu.addEventListener('click', e => {
+			const dropdown = e.target.closest('.dropdown');
+			if (!dropdown) { return; }
+			e.preventDefault();
+			dropdown.toggleAttribute('show-dropdown');
+		});
+	})();
+
+	// Toggle nav - mobile
+	(() => {
+		const hamburger = document.querySelector('[data-activate="nav"]');
+		if (!hamburger) { return; }
+		hamburger.addEventListener('click', e => {
+			e.target.closest('.header-main').toggleAttribute('show-nav');
+		});
+	})();
+
 }, true);
 
 window.addEventListener('load', () => {
 
 	const headerMain = document.querySelector('[data-watch=scroll]');
 
+	// Watch scroll - header
 	(() => {
 		window.addEventListener('scroll', () => {
 			const scroll = window.scrollY;

@@ -9,15 +9,26 @@
 	align-items: center
 	gap: em(14px)
 	font-weight: bold
-	a
+	a, .search
 		padding: em(14px) em(46px)
+	a
 		border: 1px solid $tsp
-		&:hover
-			border-color: $col-base-dark-1
+		@media (min-width: 1025px)
+			&:hover
+				border-color: $col-base-dark-1
+
+.hamburger
+	line-height: 1
+	&:hover
+		color: $col-base-dark-3
+	&::after
+		content: '☰'
+		font-size: 36px
+		transition: color $tr-1
 
 .dropdown
 	position: relative
-	> a
+	.dropdown-main
 		display: inline-flex
 		align-items: center
 		&::after
@@ -26,20 +37,15 @@
 			font-size: 0.45em
 			color: $col-base-light-1
 			margin-left: 2em
-	&:hover
-		> ul
-			opacity: 1
-			visibility: visible
-		> a::after
-			transform: rotate(180deg)
-	> ul
-		position: absolute
+	.dropdown-list
 		width: 100%
-		top: 100%
-		left: 0
-		transition: opacity $tr-1
+		transition: opacity $tr-1, max-height $tr-1
 		opacity: 0
 		visibility: hidden
+		@media (min-width: 1025px)
+			position: absolute
+			top: 100%
+			left: 0
 		li
 			width: 100%
 		a
@@ -49,19 +55,34 @@
 			&:hover
 				color: $col-accent
 				background-color: lighten($col-base-dark-1, 5%)
+	@media (min-width: 1025px)
+		&:hover
+			.dropdown-list
+				opacity: 1
+				visibility: visible
+			.dropdown-main::after
+				transform: rotate(180deg)
+	@media (max-width: 1024px)
+		.dropdown-list
+			max-height: 0
+		&[show-dropdown]
+			.dropdown-list
+				max-height: 500px
+				opacity: 1
+				visibility: visible
+			.dropdown-main::after
+				transform: rotate(180deg)
 
 .search
 	position: relative
+	display: inline-flex
+	align-items: center
+	gap: 1em
 	&[data-active] .search-field
 		opacity: 1
 		visibility: visible
 		padding: 0.8em 1.2em
 	.search-field
-		position: absolute
-		z-index: 10
-		right: 100%
-		top: 50%
-		transform: translate(0, -50%)
 		width: em(341px)
 		background-color: $col-base-dark-1
 		padding: 0.8em 0
@@ -72,11 +93,16 @@
 		opacity: 0
 		visibility: hidden
 		transition: all $tr-1
+		@media (min-width: 1025px)
+			position: absolute
+			z-index: 10
+			right: 100%
+			top: 50%
+			transform: translate(0, -50%)
 		&::placeholder
 			opacity: 1
 	.search-button
 		flex-shrink: 0
-		margin-left: 1em
 		&:hover
 			color: $col-base-dark-1
 
@@ -276,15 +302,4 @@
 			pointer-events: none
 		&:hover
 			color: $col-accent
-
-.hamburger
-	line-height: 1
-	&:hover
-		color: $col-base-dark-3
-	&::after
-		content: '\292B'
-		font-size: 36px
-		transition: color $tr-1
-	// &
-	// 	content: '⤫'
 

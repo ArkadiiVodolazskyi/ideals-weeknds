@@ -12,16 +12,18 @@
 
 	<header class="header-main" data-watch="scroll">
 	<div class="wrapper">
-		<a class="logo" href="#">
-			<svg width="64" height="37"><use href="../../img/icons.svg#logo"></use></svg>
-		</a>
-		<button class="hamburger"></button>
+		<div class="top">
+			<a class="logo" href="#">
+				<svg width="64" height="37"><use href="../../img/icons.svg#logo"></use></svg>
+			</a>
+			<button class="hamburger" data-activate="nav"></button>
+		</div>
 		<nav>
 			<ul class="nav-menu">
 				<li><a href="">News</a></li>
 				<li class="dropdown">
-					<a href="">Merch.</a>
-					<ul>
+					<a class="dropdown-main" href="">Merch.</a>
+					<ul class="dropdown-list">
 						<li><a href="">Poster</a></li>
 						<li><a href="">T-Shirt</a></li>
 					</ul>

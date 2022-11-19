@@ -55,25 +55,36 @@
 
 @media (max-width: 1024px)
 	.header-main
+		&[show-nav] nav
+			margin-top: 1em
+			max-height: 500px
+			opacity: 1
+			visibility: visible
 		.wrapper
 			max-width: unset
+			flex-direction: column
+			align-items: stretch
+		.top
 			padding-inline: 5%
 		.hamburger
 			display: inline-block
 		nav
-			position: absolute
-			left: 0
-			right: 0
-			top: 100%
-			width: 100%
-			padding: 0 5%
-			background-color: var(--col-scroll)
-			transition: opacity $tr-1
-			// opacity: 0
-			// visibility: hidden
+			max-height: 0
+			opacity: 0
+			visibility: hidden
 		.nav-menu
 			flex-direction: column
 			align-items: stretch
+			a, .search
+				display: flex
+				padding-inline: 5%
+			a:hover
+				background-color: $col-base-dark-1
+			.search
+				.search-button
+					order: 1
+				.search-field
+					order: 2
 
 	.cards[data-cards="news-default"]
 		gap: 3em
