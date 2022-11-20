@@ -53,80 +53,11 @@
 			</div>
 		</main>
 
-		<aside>
-			<section class="news-aside">
-				<h3 class="section-title">Latest posts</h3>
-				<div class="cards" data-cards="news-aside">
-					<a class="card" href="">
-						<article>
-							<div class="thumbnail-wrapper">
-								<img class="thumbnail" src="<?= IMG_DIR; ?>/news/latest-1.png">
-							</div>
-							<div class="content">
-								<h4 class="title">Heading One</h4>
-								<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
-							</div>
-						</article>
-					</a><a class="card" href="">
-						<article>
-							<div class="thumbnail-wrapper">
-								<img class="thumbnail" src="<?= IMG_DIR; ?>/news/latest-2.png">
-							</div>
-							<div class="content">
-								<h4 class="title">Heading Two</h4>
-								<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
-							</div>
-						</article>
-					</a><a class="card" href="">
-						<article>
-							<div class="thumbnail-wrapper">
-								<img class="thumbnail" src="<?= IMG_DIR; ?>/news/latest-3.png">
-							</div>
-							<div class="content">
-								<h4 class="title">Heading Three</h4>
-								<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
-							</div>
-						</article>
-					</a>
-				</div>
-			</section>
-			<section class="news-aside">
-				<h3 class="section-title">Recent releases</h3>
-				<div class="cards" data-cards="news-aside">
-					<a class="card" href="">
-						<article>
-							<div class="thumbnail-wrapper">
-								<img class="thumbnail" src="<?= IMG_DIR; ?>/news/recent-1.png">
-							</div>
-							<div class="content">
-								<h4 class="title">Heading One</h4>
-								<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
-							</div>
-						</article>
-					</a><a class="card" href="">
-						<article>
-							<div class="thumbnail-wrapper">
-								<img class="thumbnail" src="<?= IMG_DIR; ?>/news/recent-2.png">
-							</div>
-							<div class="content">
-								<h4 class="title">Heading Two</h4>
-								<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
-							</div>
-						</article>
-					</a><a class="card" href="">
-						<article>
-							<div class="thumbnail-wrapper">
-								<img class="thumbnail" src="<?= IMG_DIR; ?>/news/recent-3.png">
-							</div>
-							<div class="content">
-								<h4 class="title">Heading Three</h4>
-								<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis elit venenatis tempus porta risus. Eu tristique vitae fames a. Bibendum duis in facilisis auctor senectus nisl vel.</p>
-							</div>
-						</article>
-					</a>
-				</div>
-			</section>
-		</aside>
+		<?php if (is_active_sidebar( 'sidebar-right')) { ?>
+			<aside>
+				<?php dynamic_sidebar( 'sidebar-right' ); ?>
+			</aside>
+		<?php } ?>
 
 	</div>
 </section>

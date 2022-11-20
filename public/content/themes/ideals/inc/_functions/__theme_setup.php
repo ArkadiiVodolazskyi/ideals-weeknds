@@ -66,8 +66,8 @@ add_filter( 'script_loader_tag', 'enchance_scripts', 10, 3 );
 
 function theme_setup() {
 	add_theme_support('menus');
-	register_nav_menu( 'header', 'Header' );
-	register_nav_menu( 'footer', 'Footer' );
+	register_nav_menu('header', 'Header');
+	register_nav_menu('footer', 'Footer');
 
 	add_theme_support('title-tag');
 	add_theme_support('custom-logo');
@@ -78,19 +78,3 @@ function theme_setup() {
 	add_action('wp_enqueue_scripts', 'register_scripts');
 }
 add_action('after_setup_theme', 'theme_setup');
-
-function register_widgets() {
-	register_sidebar([
-		'name'          => 'Sidebar Right',
-		'id'            => 'sidebar-right',
-		'description'   => '',
-		'class'         => '',
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '',
-		'after_title'   => '',
-		'before_sidebar' => '',
-		'after_sidebar'  => '',
-	]);
-}
-add_action('widgets_init', 'register_widgets');
