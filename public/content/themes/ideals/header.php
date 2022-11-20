@@ -13,7 +13,7 @@
 	<header class="header-main" data-watch="scroll">
 		<div class="wrapper">
 			<div class="top">
-				<a class="logo" href="#">
+				<a class="logo" href="<?= get_home_url(); ?>">
 					<svg width="64" height="37">
 						<use href="<?= IMG_DIR; ?>/icons.svg#logo"></use>
 					</svg>

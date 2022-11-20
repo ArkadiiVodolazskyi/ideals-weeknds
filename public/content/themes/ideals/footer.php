@@ -1,6 +1,6 @@
 <footer class="footer-main">
 	<div class="wrapper">
-		<a class="logo" href="#">
+		<a class="logo" href="<?= get_home_url(); ?>">
 			<svg width="64" height="37">
 				<use href="<?= IMG_DIR; ?>/icons.svg#logo"></use>
 			</svg>

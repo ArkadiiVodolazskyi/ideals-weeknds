@@ -8,8 +8,7 @@ define("LIBS_DIR", B_THEME_ROOT . "/assets/libs");
 define("FONTS_DIR", B_THEME_ROOT . "/assets/fonts");
 define("UPLOADS_DIR", wp_get_upload_dir()['baseurl']);
 
-function register_post_types()
-{
+function register_post_types() {
 	register_post_type(
 		'clients',
 		array(
@@ -19,7 +18,6 @@ function register_post_types()
 			],
 			'public' => true,
 			'has_archive' => false,
-			'rewrite' => ['slug' => 'clients'],
 			'show_in_rest' => true,
 			'menu_icon' => 'dashicons-format-status',
 			'supports'	=> ['title', 'editor', 'thumbnail', 'excerpt']
@@ -28,8 +26,16 @@ function register_post_types()
 }
 add_action('init', 'register_post_types');
 
-function register_styles()
-{
+function redirect_post_type_single() {
+	$post_type = 'clients';
+	if (!is_singular($post_type))
+		return;
+	wp_redirect( get_home_url(), 301 );
+		exit;
+}
+add_action( 'template_redirect', 'redirect_post_type_single' );
+
+function register_styles() {
 	wp_register_style('tiny-slider-css', LIBS_DIR . "/tiny-slider.css");
 	wp_enqueue_style('tiny-slider-css');
 
@@ -37,8 +43,7 @@ function register_styles()
 	wp_enqueue_style('main-css');
 }
 
-function register_scripts()
-{
+function register_scripts() {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', LIBS_DIR . "/jquery-3.5.1.min.js", [], false, false);
 	wp_enqueue_script('jquery');
@@ -59,8 +64,7 @@ function enchance_scripts( $tag, $handle, $src ) {
 }
 add_filter( 'script_loader_tag', 'enchance_scripts', 10, 3 );
 
-function theme_setup()
-{
+function theme_setup() {
 	add_theme_support('menus');
 	register_nav_menu( 'header', 'Header' );
 	register_nav_menu( 'footer', 'Footer' );
@@ -75,17 +79,16 @@ function theme_setup()
 }
 add_action('after_setup_theme', 'theme_setup');
 
-function register_widgets()
-{
+function register_widgets() {
 	register_sidebar([
 		'name'          => 'Sidebar Right',
-		'id'            => "sidebar-right",
+		'id'            => 'sidebar-right',
 		'description'   => '',
 		'class'         => '',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget'  => "</li>\n",
-		'before_title'  => '<h2 class="widgettitle">',
-		'after_title'   => "</h2>\n",
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
 		'before_sidebar' => '',
 		'after_sidebar'  => '',
 	]);
