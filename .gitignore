@@ -3,6 +3,7 @@ plugins/*
 !plugins/advanced-custom-fields-pro
 themes/*
 !themes/ideals
+themes/ideals/assets
 uploads
 vendor
 composer.lock
