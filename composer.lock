@@ -4,17 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c1a0bec5e3cb8d350522850a9db3f19",
+    "content-hash": "ffb42bdb5e5eef1c96bd31a8d7b71c00",
     "packages": [
-        {
-            "name": "advanced-custom-fields/advanced-custom-fields-pro",
-            "version": "5.6.8",
-            "dist": {
-                "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
-            },
-            "type": "wordpress-plugin"
-        },
         {
             "name": "composer/installers",
             "version": "v2.2.0",
@@ -309,22 +300,22 @@
             "time": "2020-04-16T21:44:57+00:00"
         },
         {
-            "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "6.0.4",
+            "name": "wpackagist-plugin/classic-widgets",
+            "version": "0.3",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
-                "reference": "tags/6.0.4"
+                "url": "https://plugins.svn.wordpress.org/classic-widgets/",
+                "reference": "tags/0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.6.0.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/classic-widgets.0.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
+            "homepage": "https://wordpress.org/plugins/classic-widgets/"
         }
     ],
     "packages-dev": [],
