@@ -7,13 +7,13 @@ if ( file_exists( __DIR__ . '/../vendor/autoload.php' ) ) {
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'database_name_here' );
+define( 'DB_NAME', 'ideals' );
 
 /** Database username */
-define( 'DB_USER', 'username_here' );
+define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'password_here' );
+define( 'DB_PASSWORD', 'root' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
@@ -70,7 +70,7 @@ define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-define( 'WP_CONTENT_DIR', __DIR__ . '/content' );
+define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/../content' );
 $scheme = $_SERVER['REQUEST_SCHEME'] ?? 'http';
 $host   = $_SERVER['HTTP_HOST'] ?? 'localhost';
 define( 'WP_CONTENT_URL', "$scheme://$host/content" );

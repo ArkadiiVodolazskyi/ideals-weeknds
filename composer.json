@@ -28,12 +28,12 @@
 	},
 	"require-dev": {},
 	"extra": {
-		"wordpress-install-dir": "public/wp",
+		"wordpress-install-dir": "public",
 		"installer-paths": {
       "public/content/plugins/{$name}/": ["type:wordpress-plugin"]
     }
 	},
 	"scripts": {
-		"post-install-cmd": "mv src/plugins/advanced-custom-fields-pro public/content/plugins"
+		"post-install-cmd": "cp -r src/plugins/advanced-custom-fields-pro public/content/plugins; cp wp-config.php public/wp; unzip uploads.zip -d public/content"
 	}
 }
