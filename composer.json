@@ -17,23 +17,19 @@
 	"config": {
 		"vendor-dir": "vendor",
 		"allow-plugins": {
-			"johnpbloch/wordpress-core-installer": true,
 			"composer/installers": true
 		}
 	},
 	"require": {
-		"php": ">=7.4",
-		"johnpbloch/wordpress": ">=6.1.1",
 		"wpackagist-plugin/classic-widgets":"0.3"
 	},
 	"require-dev": {},
 	"extra": {
-		"wordpress-install-dir": "public",
 		"installer-paths": {
-      "public/content/plugins/{$name}/": ["type:wordpress-plugin"]
+      "plugins/{$name}/": ["type:wordpress-plugin"]
     }
 	},
 	"scripts": {
-		"post-install-cmd": "cp -r src/plugins/advanced-custom-fields-pro public/content/plugins; cp wp-config.php public/wp; unzip uploads.zip -d public/content"
+		"post-install-cmd": "unzip db/uploads.zip -d uploads; unzip db/wordpress.zip db/"
 	}
 }

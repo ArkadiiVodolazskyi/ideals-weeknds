@@ -1,24 +1,9 @@
-# WordPress
-/public/wp/
-/public/content/plugins
-
-# Logs
-*.log
-
-# Dotenv
-.env
-.env.*
-!.env.example
-
-# Composer
-/vendor
-composer.lock
-
-# Node
 node_modules
+plugins/*
+!plugins/advanced-custom-fields-pro
+themes/*
+!themes/ideals
+uploads
+vendor
+composer.lock
 package-lock.json
-/public/content/themes/ideals/assets
-/public/content/uploads
-
-# Temp info
-Todo.md

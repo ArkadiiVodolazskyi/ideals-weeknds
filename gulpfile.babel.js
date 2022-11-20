@@ -17,7 +17,7 @@ const server = browserSync.create();
 
 // ----- Routes -----
 
-const theme_assets = 'public/content/themes/ideals/assets';
+const theme_assets = 'themes/ideals/assets';
 const routes = {
 	html: {
 		watch: 'src/html/**/*.html',
